@@ -1,0 +1,1176 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <title>Faculdade Senac</title>
+  <link rel="icon" type="image/x-icon" href="img/logo_senac.png">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet">
+</head>
+
+<body>
+  <style>
+    :root {
+      --verde: #00529B;
+      --verde-escuro: #00529B;
+      --dourado: #F58D1E;
+
+      --creme: #F7F5EF;
+      --creme-escuro: #ECE8DA;
+
+      --branco: #FFFFFF;
+      --texto: #000000;
+      --texto-claro: #444443;
+
+      --sombra: 0 20px 60px rgba(48, 74, 78, .12);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--creme);
+      color: var(--texto);
+      line-height: 1.6;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: auto;
+      margin: auto;
+    }
+
+    header {
+      position: absolute;
+      width: 100%;
+      top: 0;
+      left: 0;
+      z-index: 20;
+      
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 22px;
+      margin: 0;
+      color: #00529B;
+    }
+
+    hr {
+      border: none;
+      border-top: 2px solid var(--dourado);
+      margin: 20px 0;
+    }
+
+    div {
+      text-align: center;
+      padding: 0;
+      margin: 0;
+    }
+
+
+    .logo {
+      color: var(--verde);
+      font-size: 1.45rem;
+      font-weight: 700;
+      letter-spacing: .5px;
+    }
+
+    .logo span {
+      color: var(--dourado);
+    }
+
+section {
+  padding: 0;
+  margin: 0;
+}
+
+.section-nav {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    min-height: 60px;
+    
+}
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 15px;
+      margin: auto;
+      color: var(--verde-escuro);
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      
+    }
+
+    nav a {
+      color: var(--texto);
+      text-decoration: none;
+      font-size: .95rem;
+      transition: .3s;
+    }
+
+    nav a:hover {
+      color: var(--dourado);
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      align-items: center;
+      gap: 10px;
+      padding: 20px;
+    }
+
+    .hero-content {
+      max-width: 90%;
+    }
+
+    .tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin: auto;
+      background: #A4934415;
+      color: var(--dourado);
+      padding: 8px 15px;
+      border-radius: 50px;
+      font-size: .8rem;
+      font-weight: 600;
+
+    }
+
+    .tag::before {
+      content: "";
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--dourado);
+    }
+
+    .hero h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(3rem, 5vw, 5rem);
+      line-height: 1.05;
+      color: var(--verde);
+      margin-bottom: 25px;
+      text-align: center;
+    }
+
+    .hero h1 span {
+      color: var(--dourado);
+    }
+
+    .hero p {
+      color: var(--texto-claro);
+      font-size: 1.05rem;
+      max-width: 90%;
+      margin-bottom: 35px;
+    }
+
+    .buttons {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 15px 27px;
+      border-radius: 50px;
+      border: none;
+      text-decoration: none;
+      font-family: inherit;
+      font-weight: 600;
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .btn-primary {
+      background: var(--verde);
+      color: white;
+
+      box-shadow: 0 12px 25px rgba(64, 116, 129, .25);
+    }
+
+    .btn-primary:hover {
+      background: var(--verde-escuro);
+      transform: translateY(-3px);
+    }
+
+    .btn-secondary {
+      color: var(--verde);
+      background: transparent;
+      border: 1px solid #40748155;
+    }
+
+    .btn-secondary:hover {
+      background: white;
+    }
+
+    .carousel {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      border-radius: 35px;
+      overflow: hidden;
+      background: var(--creme-escuro);
+      box-shadow: var(--sombra);
+    }
+
+    .slide {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition:
+        opacity .8s ease,
+        transform 5s ease;
+      transform: scale(1.04);
+    }
+
+    .slide.active {
+      opacity: 1;
+      transform: scale(1);
+    }
+
+    .slide img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .carousel::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top,
+          rgba(38, 55, 58, .45),
+          transparent 45%);
+      pointer-events: none;
+    }
+
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      border: 1px solid rgba(255, 255, 255, .5);
+      background: rgba(255, 255, 255, .75);
+      backdrop-filter: blur(10px);
+      color: var(--verde);
+      font-size: 20px;
+      cursor: pointer;
+      z-index: 5;
+      transition: .3s;
+    }
+
+    .carousel-button:hover {
+      background: white;
+      transform: translateY(-50%) scale(1.08);
+    }
+
+    .prev {
+      left: 20px;
+    }
+
+    .next {
+      right: 20px;
+    }
+
+    .dots {
+      position: absolute;
+      bottom: 25px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 8px;
+      z-index: 5;
+    }
+
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      border: none;
+      background: rgba(255, 255, 255, .6);
+      cursor: pointer;
+      transition: .3s;
+    }
+
+    .dot.active {
+      width: 25px;
+      border-radius: 10px;
+      background: var(--dourado);
+    }
+
+    .intro {
+      padding: 10px 0;
+      text-align: center;
+    }
+
+    .intro-content {
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .intro-content span {
+      color: var(--dourado);
+    }
+
+    .eyebrow {
+      color: var(--verde);
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-bottom: 15px;
+      max-width: 80%;
+      margin: auto;
+      text-align: center;
+      background-color: var(--dourado);
+      border-radius: 10px;
+    }
+
+    .intro h2,
+    .section-title {
+      font-family: "Playfair Display", serif;
+      color: var(--verde);
+      font-size: clamp(2.2rem, 4vw, 3.5rem);
+      line-height: 1.15;
+      margin-bottom: 20px;
+      text-align: center;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .section-title span {
+      color: var(--dourado);
+    }
+
+    .intro p {
+      color: var(--texto-claro);
+    }
+
+    .features {
+      padding: 10px 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      margin-bottom: 20px;
+      max-width: 80%;
+      margin: auto;
+      text-align: center;
+    }
+
+    .section-header p {
+      max-width: 80%;
+      margin: auto;
+      color: var(--texto-claro);
+    }
+
+    .section-header h2,
+    .section-title {
+      font-family: "Playfair Display", serif;
+      color: var(--verde);
+      line-height: 1.15;
+      max-width: 80%;
+      margin: auto;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns:
+        repeat(3, 1fr);
+      gap: 25px;
+    }
+
+    .card {
+      background: white;
+      padding: 31px;
+      border-radius: 25px;
+      box-shadow:
+        0 10px 15px rgba(48, 74, 78, .06);
+      transition: .35s;
+    }
+
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow:
+        0 20px 45px rgba(48, 74, 78, .12);
+    }
+
+    .card-number {
+      color: var(--dourado);
+      font-family: "Playfair Display", serif;
+      font-size: 2rem;
+      margin-bottom: 20px;
+    }
+
+    .card h3 {
+      color: var(--verde);
+      font-size: 1.2rem;
+      margin-bottom: 12px;
+    }
+
+    .card p {
+      color: var(--texto-claro);
+      font-size: .95rem;
+    }
+
+    .gallery {
+      padding: 10px 0;
+    }
+
+    .gallery-grid {
+      display: grid;
+      grid-template-columns:
+        1.4fr 1fr 1fr;
+      grid-template-rows:
+        250px 250px;
+      gap: 20px;
+    }
+
+    .gallery-item {
+      position: relative;
+      overflow: hidden;
+      border-radius: 25px;
+      background: var(--creme-escuro);
+    }
+
+    .gallery-item:first-child {
+      grid-row: span 2;
+    }
+
+    .gallery-item img {
+      height: 100%;
+      object-fit: cover;
+      transition: .6s;
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.06);
+    }
+
+    .gallery-item::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to top,
+          rgba(38, 55, 58, .35),
+          transparent 60%);
+    }
+
+    .cta {
+      padding: 10px 0 10px;
+    }
+
+    .cta-box {
+      position: relative;
+      overflow: hidden;
+      text-align: center;
+      padding: 10px 10px;
+      border-radius: 35px;
+      background: var(--verde);
+      color: white;
+    }
+
+    .cta-box::before {
+      content: "";
+      position: absolute;
+      width: 350px;
+      height: 350px;
+      border-radius: 50%;
+      background: #A4934430;
+      top: -200px;
+      right: -100px;
+    }
+
+    .cta-box h2 {
+      position: relative;
+      font-family: "Playfair Display", serif;
+      font-size: 3rem;
+      margin-bottom: 15px;
+    }
+
+    .cta-box p {
+      position: relative;
+      max-width: 600px;
+      margin: 0 auto;
+      opacity: .85;
+    }
+
+    .cta-box .btn {
+      position: relative;
+      background: var(--dourado);
+      color: white;
+    }
+
+    .cta-box .btn:hover {
+      background: #B2A25A;
+      transform: translateY(-3px);
+    }
+
+    footer {
+      padding: 10px 0;
+      border-top: 1px solid #40748118;
+      color: var(--texto-claro);
+      text-align: center;
+      font-size: .9rem;
+    }
+
+    @media(max-width:950px) {
+
+      nav ul {
+        display: none;
+        margin: auto;
+      }
+
+      .hero {
+        grid-template-columns: 1fr;
+        padding-top: 15px;
+        gap: 10px;
+      }
+
+      .hero-content {
+        text-align: center;
+        margin: auto;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .buttons {
+        justify-content: center;
+      }
+
+      .cards {
+        grid-template-columns: 1fr;
+      }
+
+      .section-header {
+        display: block;
+      }
+
+      .section-header p {
+        margin-top: 20px;
+      }
+
+      .gallery-grid {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 250px 250px;
+      }
+
+      .gallery-item:first-child {
+        grid-row: span 1;
+      }
+    }
+
+    @media(max-width:600px) {
+
+      .hero h1 {
+        font-size: 2.8rem;
+        text-align: center;
+      }
+
+      .carousel {
+        height: 350px;
+        border-radius: 25px;
+      }
+
+      .buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      .gallery-grid {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(4, 220px);
+      }
+
+      .intro,
+      .features,
+      .gallery {
+        padding: 15px 0;
+      }
+
+      .cta {
+        padding: 10px 0 10px;
+      }
+
+      .cta-box {
+        padding: 10px 15px;
+      }
+
+      .cta-box h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    iframe {
+      width: 90%;
+      height: 500px;
+      display: flex;
+      margin: 0 auto;
+      border: 5px solid var(--verde);
+    }
+
+    p {
+      text-align: center;
+      font-size: 1rem;
+      font-weight: bold;
+      color: var(--verde);
+    }
+
+    form {
+      width: 70%;
+      height: 100%;
+      margin: 0 auto;
+      font-size: 1.5rem;
+      font-weight: bold;
+      color: var(--verde);
+    }
+
+    .caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(0, 0, 0, 0.6);
+      color: white;
+      padding: 10px;
+      text-align: center;
+      font-family: sans-serif;
+    }
+
+  </style>
+
+  <header>
+    <div class="container">
+      <nav>
+        <div class="logo">
+          <img src="img/logo.png" alt="Logo" width="auto" height="50px" title="http://www.pr.senac.br/">
+        </div>
+        <ul class="section-nav">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="turmas.html">Turmas</a></li>
+          <li><a href="projetos.html">Projetos</a></li>
+          <li><a href="eventos.html">Eventos</a></li>
+          <li><a href="contato.html">Contato</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+    <br /><br />
+    <div class="hero-content">
+      <hr />
+      <h1>Curso de Análise e Desenvolvimento de Sistemas</h1>
+      <p>
+        Desde 2022, a Faculdade Senac de Maringá oferece o curso superior de tecnologia em 
+        Análise e Desenvolvimento de Sistemas, tendo formado profissionais preparados para 
+        atuar no mercado de tecnologia da informação, não apenas tecnicamente, mas com uma visão
+        que abrange a formação de caráter e de um cidadão consciente do mundo no qual vivemos.
+      </p>
+      <br />
+      <div class="buttons">
+        <a href="formulario.html" class="btn btn-primary">Contato</a>
+        <a href="saibamais.html" class="btn btn-secondary">Saiba mais</a>
+      </div>
+    </div>
+
+  <br /><br />
+  <section class="gallery">
+    <div class="container">
+      <div class="eyebrow">Eventos de 2022</div> <br />
+      <h2 class="section-title">
+        No <span>primeiro ano</span> do curso, tudo era novidade...
+      </h2><br />
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/Primeira Semana Acadêmica.JPG" alt="Primeira Semana Acadêmica">
+          <div class="caption">Primeira Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Segunda Semana Acadêmica.jpg" alt="Segunda Semana Acadêmica">
+          <div class="caption">Segunda Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/DEV-RUN.jpg"
+            alt="Maratona de programação DEV-RUN">
+          <div class="caption">Maratona de programação DEV-RUN</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/workshop-faculdade.jpg" alt="Workshop da Faculdade">
+          <div class="caption">Workshop da Faculdade</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <br /><br />
+  <section class="gallery">
+    <div class="container">
+      <div class="eyebrow">Eventos de 2023</div> <br />
+      <h2 class="section-title">
+        No <span>segundo ano</span> do curso, as coisas foram evoluindo...
+      </h2><br />
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/Terceira Semana Academica.jpg" alt="Terceira Semana Acadêmica">
+          <div class="caption">Terceira Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Terceira Semana Academica 2.jpg" alt="Terceira Semana Acadêmica">
+          <div class="caption">Terceira Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Agro.jpg"
+            alt="Inova Agro">
+          <div class="caption">Inova Agro</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Workshop.jpg" alt="Workshop de carreira internacional">
+          <div class="caption">Workshop de carreira internacional</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Visita Cocamar.jpg" alt="Visita à Cocamar">
+          <div class="caption">Visita à Cocamar</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Quarta Semana Academica.jpg" alt="Quarta Semana Acadêmica">
+          <div class="caption">Quarta Semana Acadêmica</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Quarta Semana Academica 2.jpg" alt="Quarta Semana Acadêmica">
+          <div class="caption">Quarta Semana Acadêmica</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Visita tecnica Vassouras 1.jpg" alt="Visita técnica a Vassouras">
+          <div class="caption">Visita técnica a Vassouras</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Visita Tecnica Vassouras 2.jpg" alt="Visita técnica a Vassouras">
+          <div class="caption">Visita técnica a Vassouras</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Inova Week.jpg" alt="Inova Week">
+          <div class="caption">Inova Week</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Workshop Branca da Mota.jpg" alt="Workshop no Colégio Branca da Mota">
+          <div class="caption">Workshop no Colégio Branca da Mota</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <br /><br />
+  <section class="gallery">
+    <div class="container">
+      <div class="eyebrow">Eventos de 2024</div> <br />
+      <h2 class="section-title">
+        No <span>terceiro ano</span> do curso, inicia a competição estadual...
+      </h2><br />
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/Doacao de Racao 1.png" alt="Campanha de doação de ração">
+          <div class="caption">Campanha de doação de ração</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Doacao de Racao 2.jpg" alt="Campanha de doação de ração">
+          <div class="caption">Campanha de doação de ração</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Agro.jpg" alt="Inova Agro">
+            alt="Inova Agro">
+          <div class="caption">Inova Agro</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Quinta Semana Academica 1.jpg" alt="Quinta Semana Acadêmica">
+          <div class="caption">Quinta Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Quinta Semana Academica 2.png" alt="Quinta Semana Acadêmica">
+          <div class="caption">Quinta Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Palestra IA.jpg" alt="Palestra sobre Inteligência Artificial">
+          <div class="caption">Palestra sobre Inteligência Artificial</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024 1.png" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024 2.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024 3.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024 4.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024 5.jpeg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024a.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+                <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024b.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024b.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2024c.jpg" alt="Ficthon 2024">
+          <div class="caption">Ficthon 2024</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <br /><br />
+  <section class="gallery">
+    <div class="container">
+      <div class="eyebrow">Eventos de 2025</div> <br />
+      <h2 class="section-title">
+        No <span>terceiro ano</span> do curso, e que venham os campeões estaduais...
+      </h2><br />
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/Palestra diversidade.jpeg" alt="Palestra sobre diversidade">
+          <div class="caption">Palestra sobre diversidade</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Start-se 2.png" alt="Start-se">
+          <div class="caption">Start-Se</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Start-se 1.jpg" alt="Start-Se">
+          <div class="caption">Start-Se</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Quinta Semana Academica 1.jpg" alt="Quinta Semana Acadêmica">
+          <div class="caption">Quinta Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025a.jpeg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025b.jpeg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025c.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025d.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025e.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025e.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2025g.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 h.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 i.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 j.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 k.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 l.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 m.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 n.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Fichton 2025 o.jpg" alt="Ficthon 2025">
+          <div class="caption">Ficthon 2025</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Setima Semana Academica 1.jpg" alt="Sétima Semana Acadêmica">
+          <div class="caption">Sétima Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Setima Semana Academica 2.jpg" alt="Sétima Semana Acadêmica">
+          <div class="caption">Sétima Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Expo Inovacao 1.jpg" alt="Expo Inovação">
+          <div class="caption">Expo Inovação</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Expo Inovacao 2.jpg" alt="Expo Inovação">
+          <div class="caption">Expo Inovação</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 1.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 3.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 4.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 5.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 6.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 7.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Inova Comercio 8.jpg" alt="Inova Comércio">
+          <div class="caption">Inova Comércio</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/sistemaCRR - Honda.gif" alt="Sistema CRR - Honda">
+          <div class="caption">Sistema CRR - Honda</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+    <br /><br />
+  <section class="gallery">
+    <div class="container">
+      <div class="eyebrow">Eventos de 2026</div> <br />
+      <h2 class="section-title">
+        No <span>terceiro ano</span> do curso, ano de Copa e eleição, 
+        mas também de muito trabalho e dedicação...
+      </h2><br />
+      <div class="gallery-grid">
+        <div class="gallery-item">
+          <img src="img/Auditorio.jpg" alt="Auditório preparado para o evento">
+          <div class="caption">Auditório preparado para o evento</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Coffee.jpg" alt="Coffee padrão Senac">
+          <div class="caption">Coffee padrão Senac</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 1.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 2.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 3.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 4.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 5.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Oitava Semana Academica 6.jpg" alt="Oitava Semana Acadêmica">
+          <div class="caption">Oitava Semana Acadêmica</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 1.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 2.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 3.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 4.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 5.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 6.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 7.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 8.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 9.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 10.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 11.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 12.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 13.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 14.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+        <div class="gallery-item" title="">
+          <img src="img/Ficthon 2026 15.jpg" alt="Ficthon 2026">
+          <div class="caption">Ficthon 2026</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="cta">
+    <div class="container">
+      <div class="cta-box">
+        <h2>Vamos Conversar?</h2>
+        <p style="color: #A49344">
+          Entre em contato conosco para saber mais sobre nosso curso, agendar uma visita
+          ou para discutir como podemos ajudá-lo a alcançar seus objetivos.
+        </p>
+        <br />
+        <a href="https://wa.me/554432185123" class="btn" title="0800 643 6 346">Contato</a>
+      </div>
+    </div>
+  </section>
+  <footer>
+    <hr />
+    <div>
+      Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas · Faculdade Senac de Maringá.
+    </div>
+    <div>
+      Av. Colombo, 6225 - Zona 07, Maringá - PR, 87020-000 · Fone: (44)3218-5100 · <a href="http://www.pr.senac.br/"
+        target="_blank">Site da Faculdade</a>
+    </div>
+  </footer>
+
+  <script>
+    let currentSlide = 0;
+    const slides = document.querySelectorAll(".slide");
+    function showSlide(index) {
+      if (index >= slides.length) {
+        currentSlide = 0;
+      }
+      else if (index < 0) {
+        currentSlide = slides.length - 1;
+      }
+      else {
+        currentSlide = index;
+      }
+      slides.forEach((slide) => {
+        slide.classList.remove("active");
+      });
+      slides[currentSlide].classList.add("active");
+    }
+
+    function changeSlide(direction) {
+      showSlide(currentSlide + direction);
+    }
+
+    function goToSlide(index) {
+      showSlide(index);
+    }
+
+    setInterval(() => {
+      changeSlide(1);
+    }, 5000);
+  </script>
+</body>
+
+</html>
