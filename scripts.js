@@ -38,6 +38,7 @@
             // Substitua pelo seu endereço do Gmail
             const destinatario = "juliana.ramos@pr.senac.br";
             const email = document.getElementById('email').value;
+            const email = document.getElementById('fone').value;
             const assunto = encodeURIComponent("Contact from the website of " + nome);
             const corpo = encodeURIComponent("Name: " + nome + "\nEmail: " + email  + "\n\nMessage:\n" + mensagem);
             

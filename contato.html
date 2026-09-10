@@ -35,20 +35,20 @@
    <br /><br /><br /><hr />
 
 <section>
-  <h2>Contact</h2>
+  <h2>Contato</h2>
     
     <form class="form" id="meuFormulario">
-        <label for="nome">Nome:</label><br>
+        <label for="nome">Nome*:</label><br>
         <input type="text" id="nome" name="nome" required><br><br>
 
         <label for="email">Email:</label><br>
-        <input type="email" id="email" name="email" required><br><br>
+        <input type="email" id="email" name="email" placeholder="nome@email"><br><br>
 
-        <label for="fone">Telefone:</label><br>
+        <label for="fone">Telefone*:</label><br>
         <input type="tel" id="fone" name="fone" required placeholder="(99)99999-9999"><br><br>
 
         <label for="mensagem">Mensagem:</label><br>
-        <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+        <textarea id="mensagem" name="mensagem" rows="4" placeholder="Adicione aqui sua mensagem."></textarea><br><br>
 
         <button type="button" onclick="enviarEmail()">Enviar email</button>
     </form>
