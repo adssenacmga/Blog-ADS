@@ -3,7 +3,7 @@
       --azul-escuro: #00529B;
       --laranja: #F58D1E;
       --fundo: "img/banner.png"
-      --creme: #F7F5EF;
+        --creme: #F7F5EF;
       --creme-escuro: #ECE8DA;
 
       --branco: #FFFFFF;
@@ -33,6 +33,11 @@
       height: 100%;
       margin: 0;
     }
+
+  p span{
+   color: var(--laranja); 
+   font-weight: bold;
+  }
 
     img {
       width: 100%;
@@ -441,8 +446,10 @@
       padding: 10px 0;
       margin: 0;
       display: flex;
-      justify-content: center; /* Centraliza na horizontal */
-      align-items: center;     /* Centraliza na vertical */
+      justify-content: center;
+      /* Centraliza na horizontal */
+      align-items: center;
+      /* Centraliza na vertical */
     }
 
     .gallery-grid {
@@ -452,8 +459,10 @@
       grid-template-rows:
         250px 250px;
       display: flex;
-      justify-content: center; /* Centraliza na horizontal */
-      align-items: center;     /* Centraliza na vertical */
+      justify-content: center;
+      /* Centraliza na horizontal */
+      align-items: center;
+      /* Centraliza na vertical */
       gap: 20px;
       margin: 0;
       padding: 10px;
@@ -463,13 +472,22 @@
       position: relative;
       overflow: hidden;
       display: flex;
-      justify-content: center; /* Centraliza na horizontal */
-      align-items: center;     /* Centraliza na vertical */
+      justify-content: center;
+      /* Centraliza na horizontal */
+      align-items: center;
+      /* Centraliza na vertical */
       border-radius: 25px;
       width: 90%;
       height: 100%;
       margin: 0;
       background: var(--creme-escuro);
+    }
+
+    .figura {
+      width: 20%;
+      margin: auto;
+      padding: 10px;
+      display: flex;
     }
 
     .gallery-item:first-child {
@@ -660,8 +678,15 @@
     p {
       text-align: center;
       font-size: 1rem;
-      font-weight: bold;
+ 
       color: var(--azul);
+    }
+
+    .p2{
+      text-align: center;
+      font-size: 1rem;
+
+      color: #000000;
     }
 
     form {
@@ -685,3 +710,16 @@
       font-family: sans-serif;
     }
 
+.conteudo-lado-a-lado {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.conteudo-lado-a-lado img {
+  height: auto;
+  width: auto;
+  max-height: 300px;
+  max-width: 30%;
+}
