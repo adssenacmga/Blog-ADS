@@ -483,13 +483,6 @@
       background: var(--creme-escuro);
     }
 
-    .figura {
-      width: 20%;
-      margin: auto;
-      padding: 10px;
-      display: flex;
-    }
-
     .gallery-item:first-child {
       grid-row: span 2;
     }
@@ -678,14 +671,12 @@
     p {
       text-align: center;
       font-size: 1rem;
- 
       color: var(--azul);
     }
 
     .p2{
       text-align: center;
       font-size: 1rem;
-
       color: #000000;
     }
 
@@ -723,3 +714,10 @@
   max-height: 300px;
   max-width: 30%;
 }
+
+    .figura {
+      width: 20%;
+      margin: auto;
+      padding: 10px;
+      display: flex;
+    }
