@@ -2,7 +2,7 @@
 <html lang="pt-BR">
 
 <head>
-  <title>ADS - Construção</title>
+  <title>Faculdade Senac</title>
   <link rel="icon" type="image/x-icon" href="img/logo_senac.png">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -32,17 +32,28 @@
     </div>
   </header>
 
-  <br /><br />
-  <div class="hero-content">
-    <hr />
-    <h1>Página em Construção - Em breve estará disponível. Aguarde...</h1>
-    <br />
-    <div class="buttons">
-      <a href="formulario.html" class="btn btn-primary">Contato</a>
-      <a href="saibamais.html" class="btn btn-secondary">Saiba mais</a>
-    </div>
-  </div>
-  <br /><br /><br /><br /><br /><br /><br /><br /><br /><br />
+   <br /><br /><br /><hr />
+
+<section>
+  <h2>Contact</h2>
+    
+    <form class="form" id="meuFormulario">
+        <label for="nome">Nome:</label><br>
+        <input type="text" id="nome" name="nome" required><br><br>
+
+        <label for="email">Email:</label><br>
+        <input type="email" id="email" name="email" required><br><br>
+
+        <label for="fone">Telefone:</label><br>
+        <input type="tel" id="fone" name="fone" required placeholder="(99)99999-9999"><br><br>
+
+        <label for="mensagem">Mensagem:</label><br>
+        <textarea id="mensagem" name="mensagem" rows="4" required></textarea><br><br>
+
+        <button type="button" onclick="enviarEmail()">Enviar email</button>
+    </form>
+</section>
+
   <section class="cta">
     <div class="container">
       <div class="cta-box">
@@ -56,8 +67,9 @@
       </div>
     </div>
   </section>
+
   <footer>
-    <hr class="hero-content"/>
+    <hr  class="hero-content"/>
     <div>
       Curso Superior de Tecnologia em Análise e Desenvolvimento de Sistemas · Faculdade Senac de Maringá.
     </div>
@@ -66,6 +78,7 @@
         target="_blank">Site da Faculdade</a>
     </div>
   </footer>
+
   <script src="scripts.js"></script>
 </body>
 
